@@ -1,6 +1,9 @@
 import 'package:vidhya_marg/app/core/controllers/theme_controller.dart';
+import 'package:vidhya_marg/app/core/routes/app_pages.dart';
+import 'package:vidhya_marg/app/core/routes/app_routes.dart';
 import 'package:vidhya_marg/app/core/utils/app_colors.dart';
 import 'package:vidhya_marg/app/core/utils/app_icons.dart';
+import 'package:vidhya_marg/app/core/utils/app_string.dart';
 import 'package:vidhya_marg/app/screens/home/home_view.dart';
 import 'package:vidhya_marg/app/screens/profile/profile_view.dart';
 import 'package:flutter/material.dart';
@@ -23,11 +26,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(
       () => GetMaterialApp(
-        title: 'Exam Prep',
+        title: 'Vidhya Marg',
         theme: themeController.lightTheme,
         darkTheme: themeController.darkTheme,
         themeMode: themeController.themeMode.value,
-        home: MainScreen(),
+        getPages: AppPages.routes,
+        initialRoute: AppRoutes.home,
         debugShowCheckedModeBanner: false,
       ),
     );
@@ -49,8 +53,9 @@ class MainScreen extends StatelessWidget {
             item: ItemConfig(
               icon: SvgPicture.asset(AppIcons.homeActive),
               inactiveIcon: SvgPicture.asset(AppIcons.home),
-              title: "Home",
+              title: AppString.kHome,
               activeForegroundColor: AppColors.navBarColor,
+              inactiveForegroundColor: AppColors.blackText,
             ),
           ),
           PersistentTabConfig(
@@ -58,13 +63,18 @@ class MainScreen extends StatelessWidget {
             item: ItemConfig(
               icon: SvgPicture.asset(AppIcons.profileActive),
               inactiveIcon: SvgPicture.asset(AppIcons.profile),
-              title: "Profile",
+              title: AppString.kProfile,
               activeForegroundColor: AppColors.navBarColor,
+              inactiveForegroundColor: AppColors.blackText,
             ),
           ),
         ],
-        navBarBuilder: (navBarConfig) =>
-            Style1BottomNavBar(navBarConfig: navBarConfig),
+        navBarBuilder: (navBarConfig) => Style1BottomNavBar(
+          navBarConfig: navBarConfig,
+          navBarDecoration: NavBarDecoration(
+            color: AppColors.navBarBackgroundColor,
+          ),
+        ),
       ),
     );
   }
