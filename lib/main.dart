@@ -40,40 +40,63 @@ class MyApp extends StatelessWidget {
 
 class MainScreen extends StatelessWidget {
   final List<Widget> pages = [HomeView(), ProfileView()];
+  final themeController = Get.find<ThemeController>();
 
   MainScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PersistentTabView(
-        tabs: [
-          PersistentTabConfig(
-            screen: HomeView(),
-            item: ItemConfig(
-              icon: SvgPicture.asset(AppIcons.homeActive),
-              inactiveIcon: SvgPicture.asset(AppIcons.home),
-              title: AppString.kHome,
-              activeForegroundColor: AppColors.navBarColor,
-              inactiveForegroundColor: AppColors.blackText,
+      body: Obx(
+        () => PersistentTabView(
+          tabs: [
+            PersistentTabConfig(
+              screen: HomeView(),
+              item: ItemConfig(
+                icon: SvgPicture.asset(AppIcons.homeActive),
+                inactiveIcon: SvgPicture.asset(
+                  AppIcons.home,
+                  colorFilter: (themeController.themeMode == ThemeMode.light)
+                      ? null
+                      : ColorFilter.mode(AppColors.lightGrey, BlendMode.srcIn),
+                ),
+                title: AppString.kHome,
+                activeForegroundColor: AppColors.navBarColor,
+                inactiveForegroundColor:
+                    (themeController.themeMode == ThemeMode.light)
+                    ? AppColors.blackText
+                    : AppColors.lightGrey,
+              ),
             ),
-          ),
-          PersistentTabConfig(
-            screen: ProfileView(),
-            item: ItemConfig(
-              icon: SvgPicture.asset(AppIcons.profileActive),
-              inactiveIcon: SvgPicture.asset(AppIcons.profile),
-              title: AppString.kProfile,
-              activeForegroundColor: AppColors.navBarColor,
-              inactiveForegroundColor: AppColors.blackText,
+            PersistentTabConfig(
+              screen: ProfileView(),
+              item: ItemConfig(
+                icon: SvgPicture.asset(AppIcons.profileActive),
+                inactiveIcon: SvgPicture.asset(
+                  AppIcons.profile,
+                  colorFilter: (themeController.themeMode == ThemeMode.light)
+                      ? null
+                      : ColorFilter.mode(AppColors.lightGrey, BlendMode.srcIn),
+                ),
+                title: AppString.kProfile,
+                activeForegroundColor: AppColors.navBarColor,
+                inactiveForegroundColor:
+                    (themeController.themeMode == ThemeMode.light)
+                    ? AppColors.blackText
+                    : AppColors.lightGrey,
+              ),
             ),
-          ),
-        ],
-        navBarBuilder: (navBarConfig) => Style1BottomNavBar(
-          navBarConfig: navBarConfig,
-          navBarDecoration: NavBarDecoration(
-            color: AppColors.navBarBackgroundColor,
-          ),
+          ],
+          navBarBuilder: (navBarConfig) {
+            return Style1BottomNavBar(
+              navBarConfig: navBarConfig,
+              navBarDecoration: NavBarDecoration(
+                color: (themeController.themeMode == ThemeMode.light)
+                    ? AppColors.navBarBackgroundColor
+                    : AppColors.blackText,
+              ),
+            );
+          },
         ),
       ),
     );
