@@ -9,7 +9,6 @@ class AppColors {
 
   // Dark Theme Colors
   static const Color darkPrimary = Color(0xFF90CAF9); // Light Blue
-  static const Color darkBackground = Color(0xFF121212); // Near Black
   static const Color darkText = Color(0xFFFFFFFF); // White
   static const Color darkAccent = Color(0xFFFFC107); // Amber
 
@@ -25,4 +24,8 @@ class AppColors {
 
   // Grey Color
   static const Color lightGrey = Color(0xFFEEEEEE); // Light Grey
+
+  // Dark Mode Color
+  static const Color darkBackground = Colors.black;
+  static const Color darkModelGrey = Color(0xFFD1D5DB);
 }

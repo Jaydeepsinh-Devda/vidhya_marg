@@ -19,4 +19,5 @@ class AppString {
   static const String kUpdatesSubtitle = "Get all exam latest updates.";
   static const String kCurrentAffairsSubtitle =
       "Get previous month current affairs.";
+  static const String kDarkMode = "Dark Mode";
 }
