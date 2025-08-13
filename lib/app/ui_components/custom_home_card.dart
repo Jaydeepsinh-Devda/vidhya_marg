@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:vidhya_marg/app/core/utils/app_colors.dart';
 import 'package:vidhya_marg/app/core/utils/size_config.dart';
 
-class CustomCard extends StatelessWidget {
+class CustomHomeCard extends StatelessWidget {
   final String title;
   final String subtitle;
   final Color? color;
   final VoidCallback onCardClick;
 
-  const CustomCard({
+  const CustomHomeCard({
     required this.title,
     required this.subtitle,
     required this.color,
@@ -32,7 +32,7 @@ class CustomCard extends StatelessWidget {
           decoration: BoxDecoration(
             color: color,
             borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: AppColors.lightGrey, width: 1.5),
+            border: Border.all(color: AppColors.borderGrey, width: 1.5),
           ),
           child: _cardContent(context),
         ),
@@ -63,7 +63,7 @@ class CustomCard extends StatelessWidget {
     decoration: BoxDecoration(
       color: Colors.white,
       borderRadius: BorderRadius.circular(6),
-      border: Border.all(color: AppColors.lightGrey, width: 1.5),
+      border: Border.all(color: AppColors.borderGrey, width: 1.5),
     ),
     child: Text(
       title,

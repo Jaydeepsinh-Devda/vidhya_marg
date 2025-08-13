@@ -67,7 +67,7 @@ class CurrentAffairsSection extends StatelessWidget {
 
   Widget _circularAvatar(Color color) => CircleAvatar(
     radius: SizeConfig.height(40),
-    backgroundColor: AppColors.lightGrey,
+    backgroundColor: AppColors.borderGrey,
     child: CircleAvatar(radius: SizeConfig.height(38), backgroundColor: color),
   );
 }
