@@ -23,7 +23,8 @@ class AppColors {
   static const Color lightViolet = Color(0xFFDDC2F9);
 
   // Grey Color
-  static const Color lightGrey = Color(0xFFEEEEEE); // Light Grey
+  static const Color borderGrey = Color(0xFFEEEEEE); // Border Grey
+  static const Color grey = Color(0xFF9C9C9C); // Grey
 
   // Dark Mode Color
   static const Color darkBackground = Colors.black;

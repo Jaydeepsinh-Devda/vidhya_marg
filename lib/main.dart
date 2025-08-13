@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         darkTheme: themeController.darkTheme,
         themeMode: themeController.themeMode.value,
         getPages: AppPages.routes,
-        initialRoute: AppRoutes.home,
+        initialRoute: AppRoutes.mainScreen,
         debugShowCheckedModeBanner: false,
       ),
     );
@@ -58,14 +58,14 @@ class MainScreen extends StatelessWidget {
                   AppIcons.home,
                   colorFilter: (themeController.themeMode == ThemeMode.light)
                       ? null
-                      : ColorFilter.mode(AppColors.lightGrey, BlendMode.srcIn),
+                      : ColorFilter.mode(AppColors.borderGrey, BlendMode.srcIn),
                 ),
                 title: AppString.kHome,
                 activeForegroundColor: AppColors.navBarColor,
                 inactiveForegroundColor:
                     (themeController.themeMode == ThemeMode.light)
                     ? AppColors.blackText
-                    : AppColors.lightGrey,
+                    : AppColors.borderGrey,
               ),
             ),
             PersistentTabConfig(
@@ -76,14 +76,14 @@ class MainScreen extends StatelessWidget {
                   AppIcons.profile,
                   colorFilter: (themeController.themeMode == ThemeMode.light)
                       ? null
-                      : ColorFilter.mode(AppColors.lightGrey, BlendMode.srcIn),
+                      : ColorFilter.mode(AppColors.borderGrey, BlendMode.srcIn),
                 ),
                 title: AppString.kProfile,
                 activeForegroundColor: AppColors.navBarColor,
                 inactiveForegroundColor:
                     (themeController.themeMode == ThemeMode.light)
                     ? AppColors.blackText
-                    : AppColors.lightGrey,
+                    : AppColors.borderGrey,
               ),
             ),
           ],

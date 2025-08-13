@@ -14,6 +14,7 @@ class ThemeController extends GetxController {
     appBarTheme: AppBarTheme(
       backgroundColor: Colors.white,
       foregroundColor: AppColors.blackText,
+      surfaceTintColor: Colors.white,
       titleTextStyle: TextStyle(
         color: AppColors.blackText,
         fontSize: 24,

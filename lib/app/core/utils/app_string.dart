@@ -20,4 +20,5 @@ class AppString {
   static const String kCurrentAffairsSubtitle =
       "Get previous month current affairs.";
   static const String kDarkMode = "Dark Mode";
+  static const String kViewAll = "View All";
 }

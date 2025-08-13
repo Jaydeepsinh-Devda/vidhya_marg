@@ -14,6 +14,7 @@ class Assets {
 
   static const String homeSelected = 'assets/home_selected.svg';
   static const String homeUnselected = 'assets/home_unselected.svg';
+  static const String pdf = 'assets/pdf.svg';
   static const String profileSelected = 'assets/profile_selected.svg';
   static const String profileUnselected = 'assets/profile_unselected.svg';
 
@@ -21,6 +22,7 @@ class Assets {
   static List<String> get values => [
     homeSelected,
     homeUnselected,
+    pdf,
     profileSelected,
     profileUnselected,
   ];

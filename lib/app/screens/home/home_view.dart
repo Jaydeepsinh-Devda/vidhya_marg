@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:vidhya_marg/app/core/routes/app_routes.dart';
 import 'package:vidhya_marg/app/core/utils/app_colors.dart';
 import 'package:vidhya_marg/app/core/utils/app_string.dart';
 import 'package:vidhya_marg/app/core/utils/size_config.dart';
 import 'package:vidhya_marg/app/screens/home/home_controller.dart';
 import 'package:vidhya_marg/app/screens/home/widgets/current_affairs_section.dart';
-import 'package:vidhya_marg/app/ui_components/custom_card.dart';
+import 'package:vidhya_marg/app/ui_components/custom_home_card.dart';
 
 class HomeView extends StatelessWidget {
   HomeView({super.key});
@@ -40,35 +41,35 @@ class HomeView extends StatelessWidget {
     );
   }
 
-  Widget _studyMaterialCard() => CustomCard(
+  Widget _studyMaterialCard() => CustomHomeCard(
     title: AppString.kStudyMaterial,
     subtitle: AppString.kStudyMaterialSubtitle,
     color: AppColors.lightViolet.withValues(alpha: 0.6),
-    onCardClick: () {},
+    onCardClick: () => Get.toNamed(AppRoutes.studyMaterial),
   );
 
-  Widget _quizCard() => CustomCard(
+  Widget _quizCard() => CustomHomeCard(
     title: AppString.kQuiz,
     subtitle: AppString.kQuizSubtitle,
     color: AppColors.lightOrange.withValues(alpha: 0.6),
     onCardClick: () {},
   );
 
-  Widget _pyqCard() => CustomCard(
+  Widget _pyqCard() => CustomHomeCard(
     title: AppString.kPYQs,
     subtitle: AppString.kPYQsSubtitle,
     color: AppColors.lightGreen.withValues(alpha: 0.6),
     onCardClick: () {},
   );
 
-  Widget _updatesCard() => CustomCard(
+  Widget _updatesCard() => CustomHomeCard(
     title: AppString.kUpdates,
     subtitle: AppString.kUpdatesSubtitle,
     color: AppColors.lightBlue.withValues(alpha: 0.6),
     onCardClick: () {},
   );
 
-  Widget _currentAffairCard() => CustomCard(
+  Widget _currentAffairCard() => CustomHomeCard(
     title: AppString.kCurrentAffairs,
     subtitle: AppString.kCurrentAffairsSubtitle,
     color: AppColors.lightViolet.withValues(alpha: 0.6),
