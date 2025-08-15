@@ -52,27 +52,27 @@ class HomeView extends StatelessWidget {
     title: AppString.kQuiz,
     subtitle: AppString.kQuizSubtitle,
     color: AppColors.lightOrange.withValues(alpha: 0.6),
-    onCardClick: () {},
+    onCardClick: () => Get.toNamed(AppRoutes.quiz),
   );
 
   Widget _pyqCard() => CustomHomeCard(
     title: AppString.kPYQs,
     subtitle: AppString.kPYQsSubtitle,
     color: AppColors.lightGreen.withValues(alpha: 0.6),
-    onCardClick: () {},
+    onCardClick: () => Get.toNamed(AppRoutes.pyq),
   );
 
   Widget _updatesCard() => CustomHomeCard(
     title: AppString.kUpdates,
     subtitle: AppString.kUpdatesSubtitle,
     color: AppColors.lightBlue.withValues(alpha: 0.6),
-    onCardClick: () {},
+    onCardClick: () => Get.toNamed(AppRoutes.updates),
   );
 
   Widget _currentAffairCard() => CustomHomeCard(
     title: AppString.kCurrentAffairs,
     subtitle: AppString.kCurrentAffairsSubtitle,
     color: AppColors.lightViolet.withValues(alpha: 0.6),
-    onCardClick: () {},
+    onCardClick: () => Get.toNamed(AppRoutes.currentAffairs),
   );
 }
