@@ -5,7 +5,9 @@ import 'package:vidhya_marg/app/core/utils/size_config.dart';
 import 'package:vidhya_marg/gen/assets.gen.dart';
 
 class CustomPdfCard extends StatelessWidget {
-  const CustomPdfCard({super.key});
+  final bool isPyq;
+
+  const CustomPdfCard({this.isPyq = false, super.key});
 
   //! Build Method
   @override
@@ -37,15 +39,19 @@ class CustomPdfCard extends StatelessWidget {
     ),
   );
 
-  Widget _pdfLogo() => SvgPicture.asset(Assets.pdf);
+  Widget _pdfLogo() => SvgPicture.asset(
+    Assets.pdf,
+    height: isPyq ? SizeConfig.height(40) : null,
+  );
 
   Widget _pdfName(BuildContext context) => Text(
     // vale will come from API
     "મધ્યકાલીન ઇતિહાસ (Medieval History)",
     maxLines: 3,
     overflow: TextOverflow.ellipsis,
-    style: Theme.of(
-      context,
-    ).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold),
+    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+      fontWeight: FontWeight.bold,
+      fontSize: isPyq ? 16 : null,
+    ),
   );
 }
